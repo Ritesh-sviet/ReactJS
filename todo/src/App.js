@@ -1,11 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
+import TodoLogin from './components/TodoLogin';
+import TodoList from './components/TodoList';
+let username = "Ritesh";
+let password = "Test123";
 
 function App() {
+  
+  const [Loggedin, setLoggedin] = useState(Boolean);
   return (
+    <>    
+
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        {Loggedin === false ? <TodoLogin userid = {username} passwd = {password} username = "Username" password = "Password" Loggedin = {Loggedin} setLoggedin = {setLoggedin}/> : <TodoList Loggedin = {Loggedin} setLoggedin = {setLoggedin} />}
+        
+        {/* <TodoLogin userid = {username} passwd = {password} username = "Username" password = "Password" Loggedin = {Loggedin} setLoggedin = {setLoggedin}/> */}
         <p>
           Visit my LinkedIn profile
         </p>
@@ -19,6 +31,7 @@ function App() {
         </a>
       </header>
     </div>
+    </>
   );
 }
 
