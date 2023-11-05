@@ -1,4 +1,6 @@
 import React from 'react'
+import Button from 'react-bootstrap/esm/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const TodoLogin = (props) => {
 
@@ -18,13 +20,15 @@ const TodoLogin = (props) => {
 
   return (
     <>
+
       <h1>Hello this for react login page</h1>
       <form onSubmit={CheckUser}>
         <label>{props.username}</label><br />
         <input type='text' placeholder='Enter your Username' title='username please' id='user' /><br /><br /><br />
         <label>{props.password}</label><br />
         <input type='password' placeholder='Enter your Password' title='Password please' id='pass' /><br /><br />
-        <input type='submit' />
+        {/* <input type='submit' /> */}
+        <Button type='submit'>Submit</Button>
       </form>
 
     </>

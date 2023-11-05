@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    float: left;
+}
+
+.ListUsers{
+    width: 30%;
+}
+
+.Leftpanel{
+    float: left;
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row-reverse;
+    border: 2px solid red;
+    border-radius: 10px;
+}
+
+p {
+    border: 6px solid green;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    margin: 20px;
+    width: fit-content;
+}
+.Leftpanel ul{
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    text-align: center;
+    padding-left: 2px;
+}
+.Leftpanel ul li, .AddedTodos{
+    width: 100%;
+    text-align: center;
+    list-style: none;
+    padding: 3px 0;
+}
+
+.Rightpanel{
+    float: right;
+    width: 70%;
+    text-align: center;
+}
+
+.ListedTodos{
+    width: 100%
+}
+
+.todos{
+    display: flex;
+    flex-direction: column;
+}
+
+.message-container {
+    position: relative;
+    width: 60%;
+    margin: 20px auto;
+    padding: 5px 20px 20px;
+    color: greenyellow;
+    text-align: left;
+    box-shadow: 3px 3px 15px #ccc;
+    border: 1px solid #eee;
+    border-radius: 5px;
+  }
+
+.Logout{
+    position: relative;
+    top: 220px;
+    left: 33%;
+}
+
+#Add{
+    border-radius: 10px;
+    padding-left: 5px;
+}
+
+.Add{
+    margin-bottom: 7px;
+}
