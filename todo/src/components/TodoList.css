@@ -88,6 +88,8 @@
 
 .message-container .owner{
     text-align: right;
+    display: block;
+    width: 100%;
 }
 
 .Add{
