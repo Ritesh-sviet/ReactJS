@@ -1,11 +1,6 @@
 {
     "users" :
-       [ {
-            "Id" : 1,
-            "Title" : "Health 🏃‍♂️",
-            "Describe" : "I am gonna go for a run Today",
-            "Creator": "Owner 😎"
-        }
+       [ 
     ]
     
 }

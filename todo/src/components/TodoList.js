@@ -6,12 +6,14 @@ import * as example from "./Database.json"
 let Collection = example;
 const TodoList = (props) => {
   const [Useritem, setUseritem] = useState(Collection.users);
+  // const [AnyList, setAnyList] = useState(false)
   // const [Add, setAdd] = useState(false)
   
   const AddTodoList = (check) => {
     return(
       <>
         <div>
+        
         <li><Button className='AddedTodos'>{check.UserTyped.Title}</Button></li>
         </div>
       </>
@@ -55,7 +57,9 @@ const TodoList = (props) => {
 
         <div className='Leftpanel'>
           <ul>
+            
             {/* <li><p><i><u><code>NO record Found</code></u></i></p></li> */}
+            
             {Useritem.map(
               (heading)=> <AddTodoList UserTyped = {heading} />
             )}
