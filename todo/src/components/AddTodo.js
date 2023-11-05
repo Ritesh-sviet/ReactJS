@@ -9,8 +9,9 @@ const AddTodo = (props) => {
     let Form = event.target;
     let Objective = Form.Add.value;
     let Desc = Form.desc.value;
+    let Creator = Form.owner.value;
     event.preventDefault();
-    props.WhatToDo({ Title: Objective, Describe : Desc, Creator: props.username })
+    props.WhatToDo({ Title: Objective, Describe : Desc, Creator : Creator })
   }
   return (
     <>
@@ -18,6 +19,8 @@ const AddTodo = (props) => {
           <input type='text' id='Add' className='Title' placeholder='write✍ your ToDo Title here'/>
           <br/>
           <input type='text' id='desc' className='Title' placeholder='Describe✍ your Task here'/>
+          <br/>
+          <input type='text' id='owner' className='Title' placeholder='Enter your Good name'/>
           
           <Button type='submit' className='Add'>Add ➕</Button>
         </form>

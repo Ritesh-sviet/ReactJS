@@ -7,16 +7,16 @@ let Collection = example;
 const TodoList = (props) => {
   const [Useritem, setUseritem] = useState(Collection.users);
   // const [Add, setAdd] = useState(false)
-
-  // const AddTodo = (check) => {
-  //   return(
-  //     <>
-  //       <div>
-  //       <li><Button className='AddedTodos'>{check}</Button></li>
-  //       </div>
-  //     </>
-  //   )
-  // }
+  
+  const AddTodoList = (check) => {
+    return(
+      <>
+        <div>
+        <li><Button className='AddedTodos'>{check.UserTyped.Title}</Button></li>
+        </div>
+      </>
+    )
+  }
   
   const WriteYourTodo = (para) => {
     para.id = Useritem.length + 1;
@@ -55,7 +55,11 @@ const TodoList = (props) => {
 
         <div className='Leftpanel'>
           <ul>
-            <li><Button className='AddedTodos'>NO record Found</Button></li>
+            {/* <li><p><i><u><code>NO record Found</code></u></i></p></li> */}
+            {Useritem.map(
+              (heading)=> <AddTodoList UserTyped = {heading} />
+            )}
+            {/* <li><Button className='AddedTodos'>NO record Found</Button></li> */}
           </ul>
         </div>
         <div className='Rightpanel'>
@@ -63,7 +67,7 @@ const TodoList = (props) => {
           {Useritem.map(
             (data) => <TakeALook thoughts={data} />
           )}
-          <AddTodo username={props.User} WhatToDo={WriteYourTodo}/>
+          <AddTodo username={props.User} WhatToDo={WriteYourTodo} />
         </div>
 
       </div>
