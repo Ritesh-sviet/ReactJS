@@ -3,3 +3,44 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Apply some basic styling to the form elements */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  input[type="text"]
+  {
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #Add{
+    padding-left: 15px;
+    border-radius: 10px;
+  }
+  button.Add {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+ #user,#pass{
+    padding-left: 15px;
+    border-radius: 10px;
+ }
+  

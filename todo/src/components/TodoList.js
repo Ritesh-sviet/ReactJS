@@ -6,8 +6,19 @@ import * as example from "./Database.json"
 let Collection = example;
 const TodoList = (props) => {
   const [Useritem, setUseritem] = useState(Collection.users);
+  // const [Add, setAdd] = useState(false)
 
-  const AddYourTodo = (para) => {
+  // const AddTodo = (check) => {
+  //   return(
+  //     <>
+  //       <div>
+  //       <li><Button className='AddedTodos'>{check}</Button></li>
+  //       </div>
+  //     </>
+  //   )
+  // }
+  
+  const WriteYourTodo = (para) => {
     para.id = Useritem.length + 1;
     setUseritem([...Useritem, para]);
   }
@@ -17,7 +28,11 @@ const TodoList = (props) => {
 
       <>
         <div className='message-container'>
-          <h4><q>{think.thoughts.Todo}</q></h4>
+          <h4><b>`{think.thoughts.Title}`</b></h4>
+          <p><q>{think.thoughts.Describe}</q></p>
+          <small className='owner'>
+            <code>~ {think.thoughts.Creator}</code> 
+          </small>
         </div>
       </>
 
@@ -26,33 +41,34 @@ const TodoList = (props) => {
 
   return (
     <>
-
-      {/* <p>Welcome Mr. {props.User}</p>
-        <h1>This is another file for TodoList</h1>
-        <p>Here we will create our List and other tasks</p> */}
-      {/* console.log(props.Loggedin); */}
-
+      <div className='header'>
         <p>Welcome Mr. {props.User}</p>
-        <div className='ListUsers'>
-          <div className='Leftpanel'>
-            <ul>
-              <li><Button className='AddedTodos'>Hello</Button></li>
-              <li><Button className='AddedTodos'>Hello</Button></li>
-              <li><Button className='AddedTodos'>Hello</Button></li>
-              <li><Button className='AddedTodos'>Hello</Button></li>
-              <li><Button className='AddedTodos'>Hello</Button></li>
-            </ul>
-          </div>
+        <Button onClick={() => props.setLoggedin(!props.Loggedin)}>Log Out</Button>
+      </div>
+      <hr/>
+
+      {/* <div className='Todo'>
+        <Button onClick={AddTodo()}>Add To Do</Button>
+      </div> */}
+      <h3>To Do</h3>
+      <div className='ListUsers'>
+
+        <div className='Leftpanel'>
+          <ul>
+            <li><Button className='AddedTodos'>NO record Found</Button></li>
+          </ul>
         </div>
         <div className='Rightpanel'>
-          <h1>Todday's Task</h1>
+          <h1>Today's Task</h1>
           {Useritem.map(
-            (data) => (<TakeALook thoughts={data} />)
+            (data) => <TakeALook thoughts={data} />
           )}
-          <AddTodo username={props.User} WhatToDo={AddYourTodo} />
+          <AddTodo username={props.User} WhatToDo={WriteYourTodo}/>
         </div>
-      
-        <Button onClick={() => props.setLoggedin(!props.Loggedin)} className='Logout'>Log Out</Button>
+
+      </div>
+
+
     </>
   )
 }

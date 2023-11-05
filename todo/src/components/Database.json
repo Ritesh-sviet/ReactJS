@@ -2,14 +2,9 @@
     "users" :
        [ {
             "Id" : 1,
-            "Todo" : "You can Write✍ anything you want to do",
+            "Title" : "Health 🏃‍♂️",
+            "Describe" : "I am gonna go for a run Today",
             "Creator": "Owner 😎"
-        },
-        {
-            "Id" : 2,
-            "Todo" : "Be Professional sir",
-            "Creator": "Owner 😎"
-
         }
     ]
     
