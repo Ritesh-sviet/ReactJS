@@ -1,22 +1,21 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.container{
+.container {
     width: 100%;
     float: left;
 }
 
-.ListUsers{
+.ListUsers {
     width: 100%;
     display: flex;
-    max-width: 1290px;
+    max-width: 1125px;
     margin: 2px auto;
 }
-
-.Leftpanel{
+.Leftpanel {
     float: left;
     margin-top: 30px;
     width: 30%;
@@ -37,31 +36,34 @@
     margin: 20px;
     width: fit-content;
 } */
-.Leftpanel ul{
+.Leftpanel ul {
     width: 100%;
     max-width: 250px;
     margin: 0 auto;
     text-align: center;
     padding-left: 2px;
 }
-.Leftpanel ul li, .AddedTodos{
+
+.Leftpanel ul li,
+.AddedTodos {
     width: 100%;
     text-align: center;
     list-style: none;
     padding: 3px 0;
 }
 
-.Rightpanel{
+.Rightpanel {
     float: right;
-    width: 70%;
-    text-align: center;
+    max-width: 519px;
+    width: 100%;
+    margin: 0px auto;
 }
 
-.ListedTodos{
+.ListedTodos {
     width: 100%
 }
 
-.todos{
+.todos {
     display: flex;
     flex-direction: column;
 }
@@ -76,29 +78,54 @@
     box-shadow: 3px 3px 15px #ccc;
     border: 1px solid #eee;
     border-radius: 5px;
-  }
-
-.header{
-    display: flex;
-    justify-content: space-between;
-    max-width: 1290px;
+}
+hr {
+    margin: 8rem 0;
+    color: inherit;
+    border: 0;
+    border-top: var(--bs-border-width) solid;
+    opacity: .25;
+    margin-bottom: 30px;
+}
+.header {
+    max-width: 1124px;
     width: 100%;
-    margin: 22px auto;
+    margin: 48px auto;
 }
 
-.message-container .owner{
+.header p {
+    float: left;
+}
+
+.header Button {
+    float: right;
+}
+
+.message-container .owner {
     text-align: right;
     display: block;
     width: 100%;
 }
 
-.Add{
+.Add {
     margin-bottom: 7px;
 }
 
-h3{
-    text-align: left;
-    margin-left: 220px;
-    position: relative;
-    top: 25px;
+h3 {
+    text-align: center;
+    max-width: 376px;
+    width: 100%;
+}
+
+.edit_delete {
+    max-width: 170px;
+    margin: 0 auto;
+}
+
+.edit {
+    float: left;
+}
+
+.delete {
+    float: right;
 }

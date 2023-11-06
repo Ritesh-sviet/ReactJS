@@ -9,14 +9,13 @@ const TodoList = (props) => {
   const [Norecord, setNorecord] = useState(Boolean);
   // const [AnyList, setAnyList] = useState(false)
   // const [Add, setAdd] = useState(false)
-  const deletedlist = (event)=>
-  {
+  const deletedlist = (event) => {
     var alltheitems = [...Useritem];
-    alltheitems.splice(event,1);
+    alltheitems.splice(event, 1);
     setUseritem(alltheitems);
   }
 
-   const getedittododata = (user) => {
+  const getedittododata = (user) => {
 
     user.id = Useritem.find(Useritem.Title)
     console.log(user.id)
@@ -29,12 +28,12 @@ const TodoList = (props) => {
     // alert(user.id);
     // user.id = setUseritem([...Useritem, {id : user}]);
     // console.log(Useritem);
-    
+
 
 
   }
 
- const AddTodoList = (check) => {
+  const AddTodoList = (check) => {
     return (
       <>
         <div className='tasks'>
@@ -44,13 +43,14 @@ const TodoList = (props) => {
           </div>
           <hr />
           <div className='edit_delete'>
-            <Button className='edit' onClick={() => {getedittododata(check.index+1)}}>Edit</Button><Button className='delete' onClick={()=>deletedlist(check.index)}>Delete</Button>
+            <Button className='edit' onClick={() => { getedittododata(check.index + 1) }}>Edit</Button>
+            <Button className='delete' onClick={() => deletedlist(check.index)}>Delete</Button>
           </div>
         </div>
       </>
     )
   }
-  
+
   const WriteYourTodo = (para) => {
     para.id = Useritem.length + 1;
     setUseritem([...Useritem, para]);
@@ -61,11 +61,11 @@ const TodoList = (props) => {
 
       <>
         <div className='message-container'>
-          <h4><b>`{think.thoughts.Title}`</b></h4>
+          {/* <h4><b>`{think.thoughts.Title}`</b></h4>
           <p><q>{think.thoughts.Describe}</q></p>
           <small className='owner'>
-            <code>~ {think.thoughts.Creator}</code> 
-          </small>
+            <code>~ {think.thoughts.Creator}</code>
+          </small> */}
         </div>
       </>
 
@@ -78,33 +78,36 @@ const TodoList = (props) => {
         <p>Welcome Mr. {props.User}</p>
         <Button onClick={() => props.setLoggedin(!props.Loggedin)}>Log Out</Button>
       </div>
-      <hr/>
-
-      {/* <div className='Todo'>
+      <hr />
+      <div className='listing'>
+        <div >
+          {/* <div className='Todo'>
         <Button onClick={AddTodo()}>Add To Do</Button>
       </div> */}
-      <h3>To Do</h3>
-      <div className='ListUsers'>
+          <h3>To Do</h3>
+        </div>
+        <div className='ListUsers'>
 
-        <div className='Leftpanel'>
-          <ul>
-            
-            {Norecord === false && <li><p><i><u><code>NO record Found</code></u></i></p></li> }
-            
+          <div className='Leftpanel'>
+            <ul>
 
+              {Norecord === false && <li><p><i><u><code>NO record Found</code></u></i></p></li>}
+
+
+              {Useritem.map(
+                (heading, index) => <AddTodoList UserTyped={heading} index={index} />
+              )}
+            </ul>
+          </div>
+          <div className='Rightpanel'>
+            <h1>Today's Task</h1>
             {Useritem.map(
-              (heading, index) => <AddTodoList UserTyped={heading} index = {index}/>
+              (data) => <TakeALook thoughts={data} />
             )}
-          </ul>
-        </div>
-        <div className='Rightpanel'>
-          <h1>Today's Task</h1>
-          {Useritem.map(
-            (data) => <TakeALook thoughts={data} />
-          )}
-          <AddTodo username={props.User} WhatToDo={WriteYourTodo} />
-        </div>
+            <AddTodo username={props.User} WhatToDo={WriteYourTodo} setNorecord={setNorecord} />
+          </div>
 
+        </div>
       </div>
 
 

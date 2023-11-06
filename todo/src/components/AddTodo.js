@@ -29,9 +29,9 @@ const AddTodo = (props) => {
       <form onSubmit={AdditUp}>
           <input type='text' id='Add' className='motive' placeholder='write✍ your ToDo Title here'/>
           <br/>
-          <input type='text' id='desc' className='Title' placeholder='Describe✍ your Task here'/>
+          <input type='text' id='desc' className='motive' placeholder='Describe✍ your Task here'/>
           <br/>
-          <input type='text' id='owner' className='Title' placeholder='Enter your Good name'/>
+          <input type='text' id='owner' className='motive' placeholder='Enter your Good name'/>
           
           <Button type='submit' className='Add'>Add ➕</Button>
         </form>
