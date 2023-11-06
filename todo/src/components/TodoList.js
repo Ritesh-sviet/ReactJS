@@ -6,15 +6,46 @@ import * as example from "./Database.json"
 let Collection = example;
 const TodoList = (props) => {
   const [Useritem, setUseritem] = useState(Collection.users);
+  const [Norecord, setNorecord] = useState(Boolean);
   // const [AnyList, setAnyList] = useState(false)
   // const [Add, setAdd] = useState(false)
-  
-  const AddTodoList = (check) => {
-    return(
+  const deletedlist = (event)=>
+  {
+    var alltheitems = [...Useritem];
+    alltheitems.splice(event,1);
+    setUseritem(alltheitems);
+  }
+
+   const getedittododata = (user) => {
+
+    user.id = Useritem.find(Useritem.Title)
+    console.log(user.id)
+    // console.log(Useritem.user);
+    // console.log(Useritem);
+
+    // console.log(); 
+    // user.id += user;
+
+    // alert(user.id);
+    // user.id = setUseritem([...Useritem, {id : user}]);
+    // console.log(Useritem);
+    
+
+
+  }
+
+ const AddTodoList = (check) => {
+    return (
       <>
-        <div>
-        
-        <li><Button className='AddedTodos'>{check.UserTyped.Title}</Button></li>
+        <div className='tasks'>
+          <div className='listed_task'>
+            <li><span className='AddedTodos'>{check.UserTyped.Title}</span></li>
+            <li>BY: <span className='AddedTodos'>{check.UserTyped.Creator}</span></li>
+          </div>
+          <hr />
+          <div className='edit_delete'>
+            <Button className='edit' onClick={() => {getedittododata(check.index+1)}}>Edit</Button><Button className='delete' onClick={()=>deletedlist(check.index)}>Delete</Button>
+          </div>
         </div>
       </>
     )
@@ -58,12 +89,12 @@ const TodoList = (props) => {
         <div className='Leftpanel'>
           <ul>
             
-            {/* <li><p><i><u><code>NO record Found</code></u></i></p></li> */}
+            {Norecord === false && <li><p><i><u><code>NO record Found</code></u></i></p></li> }
             
+
             {Useritem.map(
-              (heading)=> <AddTodoList UserTyped = {heading} />
+              (heading, index) => <AddTodoList UserTyped={heading} index = {index}/>
             )}
-            {/* <li><Button className='AddedTodos'>NO record Found</Button></li> */}
           </ul>
         </div>
         <div className='Rightpanel'>
