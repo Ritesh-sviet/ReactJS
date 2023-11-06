@@ -1,2 +1,2 @@
 # ReactJS
-Beginning in React JS
+Beginning in React JS                                       ~Ritesh Sharma
