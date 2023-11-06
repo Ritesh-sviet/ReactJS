@@ -5,7 +5,7 @@ import TodoLogin from './components/TodoLogin';
 import TodoList from './components/TodoList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 let username = "Ritesh";
-let password = "Test123";
+let password = "";
 
 function App() {
   
