@@ -11,12 +11,23 @@ const AddTodo = (props) => {
     let Desc = Form.desc.value;
     let Creator = Form.owner.value;
     event.preventDefault();
-    props.WhatToDo({ Title: Objective, Describe : Desc, Creator : Creator })
+    if (Objective !== '' && Desc !== '') {
+     let tmp = { Title: Objective, Describe : Desc, Creator : Creator === '' ? "Owner": Creator };
+     // console.log('tmp', tmp)
+
+      props.WhatToDo(tmp)
+      
+      props.setNorecord(true)
+    }
+    else{
+      alert("You have to fill all the fields")
+      props.setNorecord(false)
+    }
   }
   return (
     <>
       <form onSubmit={AdditUp}>
-          <input type='text' id='Add' className='Title' placeholder='write✍ your ToDo Title here'/>
+          <input type='text' id='Add' className='motive' placeholder='write✍ your ToDo Title here'/>
           <br/>
           <input type='text' id='desc' className='Title' placeholder='Describe✍ your Task here'/>
           <br/>
