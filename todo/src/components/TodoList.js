@@ -41,7 +41,7 @@ const TodoList = (props) => {
             <li><span className='AddedTodos'>{check.UserTyped.Title}</span></li>
             <li>BY: <span className='AddedTodos'>{check.UserTyped.Creator}</span></li>
           </div>
-          <hr />
+          <hr/>
           <div className='edit_delete'>
             <Button className='edit' onClick={() => { getedittododata(check.index + 1) }}>Edit</Button>
             <Button className='delete' onClick={() => deletedlist(check.index)}>Delete</Button>
@@ -60,13 +60,13 @@ const TodoList = (props) => {
     return (
 
       <>
-        <div className='message-container'>
-          {/* <h4><b>`{think.thoughts.Title}`</b></h4>
+        {/* <div className='message-container'>
+          <h4><b>`{think.thoughts.Title}`</b></h4>
           <p><q>{think.thoughts.Describe}</q></p>
           <small className='owner'>
             <code>~ {think.thoughts.Creator}</code>
-          </small> */}
-        </div>
+          </small>
+        </div> */}
       </>
 
     );
@@ -79,17 +79,17 @@ const TodoList = (props) => {
         <Button onClick={() => props.setLoggedin(!props.Loggedin)}>Log Out</Button>
       </div>
       <hr />
-      <div className='listing'>
-        <div >
+      
+      
           {/* <div className='Todo'>
         <Button onClick={AddTodo()}>Add To Do</Button>
       </div> */}
           <h3>To Do</h3>
-        </div>
+       
         <div className='ListUsers'>
 
           <div className='Leftpanel'>
-            <ul>
+            <ul className='unordered'>
 
               {Norecord === false && <li><p><i><u><code>NO record Found</code></u></i></p></li>}
 
@@ -108,7 +108,6 @@ const TodoList = (props) => {
           </div>
 
         </div>
-      </div>
 
 
     </>
