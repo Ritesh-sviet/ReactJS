@@ -13,7 +13,7 @@ const AddTodo = (props) => {
     event.preventDefault();
     if (Objective !== '' && Desc !== '') {
      let tmp = { Title: Objective, Describe : Desc, Creator : Creator === '' ? "Owner": Creator };
-     // console.log('tmp', tmp)
+     // console.log('tmp', tmp) 
 
       props.WhatToDo(tmp)
       
