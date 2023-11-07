@@ -114,9 +114,9 @@ h3{
     display: flex;
     justify-content: space-evenly;
 }
-.listed_task{
-    max-width: 100px;
-    margin: 10px auto;
+.listed_task {
+    max-width: 245px;
+    margin: 0px auto;
     text-shadow: 3px 13px 15px blue;
     color: blanchedalmond;
     border-radius: 5px;
