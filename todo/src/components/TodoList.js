@@ -8,7 +8,7 @@ const TodoList = (props) => {
   const [Useritem, setUseritem] = useState(Collection.users);
   const [Norecord, setNorecord] = useState(Boolean);
   const [userid, setuserid] = useState(0);
-  const [setEditor, setsetEditor] = useState({});
+  const [Editor, setEditor] = useState({});
   const deletedlist = (event) => {
     var alltheitems = [...Useritem];
     alltheitems.splice(event, 1);
@@ -23,7 +23,7 @@ const TodoList = (props) => {
         event.id ==selectedUserId;
       });
       // will take the object using id and store the object in the hook of setEditor
-      setsetEditor(selectedUserId);
+      setEditor(selectedUser);
   }
 
   const AddTodoList = (check) => {
