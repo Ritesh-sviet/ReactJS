@@ -24,9 +24,9 @@ const AddTodo = (props) => {
       let tmp = { Title: Objective, Describe: Desc, Creator: Creator === '' ? "Owner" : Creator };
 
       props.WhatToDo(tmp);
+
       props.setNorecord(true);
-      props.setuserid(props.userid + 1);
-      alert(props.userid + 1);
+      
 
     }
     else {
