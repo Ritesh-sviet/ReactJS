@@ -12,7 +12,7 @@ const AddTodo = (props) => {
     setdesc(props?.Editor?.Describe)
     setowner(props?.Editor?.Creator)
   }, [props.setEditor])
-
+ 
   const AdditUp = (event) => {
     let Form = event.target;
     let Objective = Form.Add.value;
@@ -50,7 +50,8 @@ const AddTodo = (props) => {
         <Button type='submit' className='Add'>Add ➕</Button>
       </form>
     </>
-  )
+  );
+  
 }
 
 export default AddTodo
