@@ -14,7 +14,7 @@ const TodoList = (props) => {
     var alltheitems = [...Useritem];
     alltheitems.splice(event, 1);
     setUseritem(alltheitems);
-    // setuserid(userid-1);
+    // setuserid(userid-1); 
   }
 
   const getedittododata = (user) => {
