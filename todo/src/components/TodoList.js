@@ -25,7 +25,7 @@ const TodoList = (props) => {
     // console.log("useritem    ",Useritem);
     var selectedUser = Useritem.find(
       (event) => {
-        console.log(event.id);
+        // console.log(event.id);
         // console.log("selectedUserId    ",selectedUserId);
         // pick the same id as it clicked on and return it
         return event.id == selectedUserId;
@@ -36,6 +36,9 @@ const TodoList = (props) => {
 
     setEditor(selectedUser);
 
+    
+    // console.log("edit ===========",...Editor);
+    
 
     // let a = setEditor(selectedUser);
 
@@ -61,8 +64,6 @@ const TodoList = (props) => {
       </>
     )
   }
-
-  
 
   const TakeALook = (think) => {
     return (
