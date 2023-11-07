@@ -7,10 +7,12 @@ const AddTodo = (props) => {
   const [title, settitle] = useState("");
   const [Deesc, setdesc] = useState("");
   const [owner, setowner] = useState("");
+  const [id, setid] = useState("");
   useEffect(() => {
     settitle(props?.Editor?.Title)
     setdesc(props?.Editor?.Describe)
     setowner(props?.Editor?.Creator)
+    setid(props?.Editor?.id)
   }, [props.Editor])
  
   const AdditUp = (event) => {
@@ -34,6 +36,7 @@ const AddTodo = (props) => {
       props.setNorecord(false)
     }
 
+     
   }
 
 
