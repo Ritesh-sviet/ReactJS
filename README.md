@@ -4,7 +4,7 @@ Beginning in React JS                                       ~Ritesh Sharma
 
 Special Notice:
 
-🚨 `Note`: Please ensure that you have `node` installed in you system and included node_modules and bootstrap in you folder before procedding
+🚨 `Note`: Please ensure that you have `node` installed in your system and included node_modules and bootstrap in you folder before procedding
 
 👉 To add node_modules please run the command `npm install` in terminal
 
