@@ -1,6 +1,5 @@
 import React from 'react'
 import Button from 'react-bootstrap/esm/Button';
-// import './TodoList.css'
 import './Addtodo.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 const AddTodo = (props) => {
@@ -11,25 +10,22 @@ const AddTodo = (props) => {
     let Desc = Form.desc.value;
     let Creator = Form.owner.value;
     event.preventDefault();
-    if (Objective !== '' && Desc !== '') {
-     let tmp = { Title: Objective, Describe : Desc, Creator : Creator === '' ? "Owner": Creator };
-     // console.log('tmp', tmp) 
 
-      props.WhatToDo(tmp)
-      
-      props.setNorecord(true)
-      props.setuserid(props.userid+1);
-      alert(props.userid+1);
+    if (Objective !== '' && Desc !== '') {
+      let tmp = { Title: Objective, Describe : Desc, Creator : Creator === '' ? "Owner": Creator };
+      props.WhatToDo(tmp);
+      props.setNorecord(true);
     }
     else{
       alert("You have to fill all the fields")
       props.setNorecord(false)
     }
   }
+
   return (
     <>
       <form onSubmit={AdditUp}>
-          <input type='text' id='Add' className='motive' placeholder='write✍ your ToDo Title here'/>
+          <input type='text' id='Add' className='motive' placeholder='write✍ your ToDo Title here' onChange={(e) => e.target.value}/>
           <br/>
           <input type='text' id='desc' className='motive' placeholder='Describe✍ your Task here'/>
           <br/>

@@ -19,20 +19,15 @@ const TodoList = (props) => {
 
   const getedittododata = (user) => {
 
-    user.id = Useritem.find(Useritem.Title)
-    console.log(user.id)
-    // console.log(Useritem.user);
-    // console.log(Useritem);
+    // WriteYourTodo(user.id)
+    // let user.id = Useritem.find(e => e.id);
+    console.log(user);
 
-    // console.log(); 
-    // user.id += user;
-
-    // alert(user.id);
-    // user.id = setUseritem([...Useritem, {id : user}]);
-    // console.log(Useritem);
-
-
-
+    let userObj = Useritem.find(e => {
+      console.log(user , 'inside', e)
+      return e.id == user
+    });
+    console.log(userObj);
   }
 
   const AddTodoList = (check) => {
@@ -42,12 +37,13 @@ const TodoList = (props) => {
           <div className='listed_task'>
             <li><span className='AddedTodos'>{check.UserTyped.Title}</span></li>
             <li>BY: <span className='AddedTodos'>{check.UserTyped.Creator}</span></li>
+            <li>id: <span className='AddedTodos'>{check.UserTyped.id}</span></li>
           </div>
           <hr/>
           <div className='edit_delete'>
-            <Button className='edit' onClick={(put) => { 
-              put.id = setUseritem(...Useritem.length+1)
-              alert(userid); }}>Edit</Button>
+            <Button className='edit' onClick={(newUser) => { 
+              getedittododata(check.UserTyped.id);
+               }}>Edit</Button>
             <Button className='delete' onClick={() => deletedlist(check.index)}>Delete</Button>
           </div>
         </div>
