@@ -8,8 +8,7 @@ const TodoList = (props) => {
   const [Useritem, setUseritem] = useState(Collection.users);
   const [Norecord, setNorecord] = useState(Boolean);
   const [userid, setuserid] = useState(0);
-  // const [AnyList, setAnyList] = useState(false)
-  // const [Add, setAdd] = useState(false)
+  const [setEditor, setsetEditor] = useState({});
   const deletedlist = (event) => {
     var alltheitems = [...Useritem];
     alltheitems.splice(event, 1);
@@ -17,17 +16,14 @@ const TodoList = (props) => {
     // setuserid(userid-1); 
   }
 
-  const getedittododata = (user) => {
-
-    // WriteYourTodo(user.id)
-    // let user.id = Useritem.find(e => e.id);
-    console.log(user);
-
-    let userObj = Useritem.find(e => {
-      console.log(user , 'inside', e)
-      return e.id == user
-    });
-    console.log(userObj);
+  const getedittododata = (selectedUserId) => {
+    var selectedUser = Useritem.find(
+      (event) => {
+        // pick the same id as it clicked on
+        event.id ==selectedUserId;
+      });
+      // will take the object using id and store the object in the hook of setEditor
+      setsetEditor(selectedUserId);
   }
 
   const AddTodoList = (check) => {
@@ -104,7 +100,7 @@ const TodoList = (props) => {
             {Useritem.map(
               (data) => <TakeALook thoughts={data} />
             )}
-            <AddTodo username={props.User} WhatToDo={WriteYourTodo} setNorecord={setNorecord} setuserid = {setuserid} userid = {userid}/>
+            <AddTodo username={props.User} WhatToDo={WriteYourTodo} setNorecord={setNorecord} setuserid = {setuserid} userid = {userid} Editor = {Editor}/>
           </div>
 
         </div>
