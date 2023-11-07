@@ -21,14 +21,16 @@ const TodoList = (props) => {
   }
 
   const getedittododata = (selectedUserId) => {
-    console.log("selectedUserId    ",selectedUserId);
-    
+    // console.log("selectedUserId    ",selectedUserId);
+    // console.log("useritem    ",Useritem);
     var selectedUser = Useritem.find(
       (event) => {
-        // pick the same id as it clicked on
-        event.id == selectedUserId;
+        console.log(event.id);
+        // console.log("selectedUserId    ",selectedUserId);
+        // pick the same id as it clicked on and return it
+        return event.id == selectedUserId;
       });
-      console.log("selectedUser    ",selectedUser);
+      // console.log("selectedUser    ",selectedUser);
     // will take the object using id and store the object in the hook of setEditor
     setEditor(selectedUser);
   }
