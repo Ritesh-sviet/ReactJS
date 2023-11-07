@@ -1,21 +1,22 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.container {
+.container{
     width: 100%;
     float: left;
 }
- 
-.ListUsers {
+
+.ListUsers{
     width: 100%;
     display: flex;
-    max-width: 1125px;
+    max-width: 1290px;
     margin: 2px auto;
 }
-.Leftpanel {
+
+.Leftpanel{
     float: left;
     margin-top: 30px;
     width: 30%;
@@ -28,34 +29,39 @@
     border-radius: 10px;
 }
 
-
-.Leftpanel ul {
+/* p {
+    border: 6px solid green;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    margin: 20px;
+    width: fit-content;
+} */
+.Leftpanel ul{
     width: 100%;
     max-width: 250px;
     margin: 0 auto;
     text-align: center;
+    padding-left: 2px;
 }
-
-.Leftpanel ul li,
-.AddedTodos {
+.Leftpanel ul li, .AddedTodos{
     width: 100%;
     text-align: center;
     list-style: none;
     padding: 3px 0;
 }
 
-.Rightpanel {
+.Rightpanel{
     float: right;
-    max-width: 519px;
-    width: 100%;
-    margin: 0px auto;
+    width: 70%;
+    text-align: center;
 }
 
-.ListedTodos {
+.ListedTodos{
     width: 100%
 }
 
-.todos {
+.todos{
     display: flex;
     flex-direction: column;
 }
@@ -70,51 +76,48 @@
     box-shadow: 3px 3px 15px #ccc;
     border: 1px solid #eee;
     border-radius: 5px;
-}
+  }
 
-.header {
-    max-width: 1124px;
+.header{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1290px;
     width: 100%;
-    margin: 48px auto;
+    margin: 22px auto;
 }
 
-.header p {
-    float: left;
-}
-
-.header Button {
-    float: right;
-}
-
-.message-container .owner {
+.message-container .owner{
     text-align: right;
     display: block;
     width: 100%;
 }
 
-.Add {
+.Add{
     margin-bottom: 7px;
 }
 
-h3 {
-    text-align: center;
-    max-width: 376px;
-    width: 100%;
+h3{
+    text-align: left;
+    margin-left: 220px;
+    position: relative;
+    top: 25px;
 }
-
-.edit_delete {
-    max-width: 170px;
-    margin: 0 auto;
+.tasks{
+    margin: 3px 0;
+    margin-bottom: 8px;
+    box-shadow: 3px 3px 15px #ccc;
+    border: 1px solid #eee;
+    border-radius: 5px;
 }
-
-.edit {
-    float: left;
+.edit_delete{
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-evenly;
 }
-
-.delete {
-    float: right;
-}
-
-.unordered{
-    padding: 0;
+.listed_task{
+    max-width: 100px;
+    margin: 10px auto;
+    text-shadow: 3px 13px 15px blue;
+    color: blanchedalmond;
+    border-radius: 5px;
 }
