@@ -5,7 +5,7 @@ import './Addtodo.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 const AddTodo = (props) => {
 
-  const AdditUp = (event) => {
+  const AdditUp = (event) => { 
     let Form = event.target;
     let Objective = Form.Add.value;
     let Desc = Form.desc.value;
