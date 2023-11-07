@@ -32,7 +32,13 @@ const TodoList = (props) => {
       });
       // console.log("selectedUser    ",selectedUser);
     // will take the object using id and store the object in the hook of setEditor
+
+
     setEditor(selectedUser);
+
+
+    // let a = setEditor(selectedUser);
+
   }
 
   const AddTodoList = (check) => {

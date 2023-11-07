@@ -11,7 +11,7 @@ const AddTodo = (props) => {
     settitle(props?.Editor?.Title)
     setdesc(props?.Editor?.Describe)
     setowner(props?.Editor?.Creator)
-  }, [props.setEditor])
+  }, [props.Editor])
  
   const AdditUp = (event) => {
     let Form = event.target;
@@ -26,7 +26,7 @@ const AddTodo = (props) => {
       props.WhatToDo(tmp);
 
       props.setNorecord(true);
-      
+
 
     }
     else {
