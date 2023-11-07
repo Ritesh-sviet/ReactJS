@@ -1,12 +1,58 @@
-id
+import React, { useEffect, useState } from 'react'
+import Button from 'react-bootstrap/esm/Button';
+// import './TodoList.css'
+import './Addtodo.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+const AddTodo = (props) => {
+const [title, settitle] = useState("");
+const [Desc, setdesc] = useState("");
+const [owner, setowner] = useState("");
+useEffect(() => {
+  settitle(props?.Editor?.Title)
+  setdesc(props?.Editor?.Describe)
+  setowner(props?.Editor?.Creator)
+}, [props.setEditor])
 
-// let res = find rest of object using id from the list array
+  const AdditUp = (event) => { 
+    let Form = event.target;
+    let Objective = Form.Add.value;
+    let Desc = Form.desc.value;
+    let Creator = Form.owner.value;
+    event.preventDefault();
 
-res = {
-    id: 'test',
-    creater: 'test 1'
+    if (Objective !== '' && Desc !== '') {
+     let tmp = { Title: Objective, Describe : Desc, Creator : Creator === '' ? "Owner": Creator };
+      
+      props.WhatToDo(tmp);
+      props.setNorecord(true);
+      props.setuserid(props.userid+1);
+      alert(props.userid+1);
+
+    }
+    else{
+      alert("You have to fill all the fields")
+      props.setNorecord(false)
+    }
+
+  }
+
+
+  return ( 
+    <>
+      <form onSubmit={AdditUp}>
+
+          <input type='text' id='Add' className='motive' placeholder='write✍ your ToDo Title here' value={title} onChange={T=>settitle(T.target.value)}/> {/* First of all set the value blank of title and when the value is changed then a function will get an event and set the value of input*/}
+          <br/>
+          <input type='text' id='desc' className='motive' placeholder='Describe✍ your Task here' value={Desc} onChange={D=>setdesc(D.target.value)}/> {/* Same as above */}
+          <br/>
+          <input type='text' id='owner' className='motive' placeholder='Enter your Good name' value={owner} onChange={O=>setowner(O.target.value)}/> {/* Same as above */}
+          
+          <Button type='submit' className='Add'>Add ➕</Button>
+        </form>
+     
+
+    </>
+  )
 }
 
-
-document.getElementById('owner').value= res.creater
-document.getElementById('tile').value= res.title
+export default AddTodo
