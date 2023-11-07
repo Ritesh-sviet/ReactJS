@@ -1,6 +1,6 @@
 id
 
-let res = find rest of object using id from the list array
+// let res = find rest of object using id from the list array
 
 res = {
     id: 'test',

@@ -7,12 +7,14 @@ let Collection = example;
 const TodoList = (props) => {
   const [Useritem, setUseritem] = useState(Collection.users);
   const [Norecord, setNorecord] = useState(Boolean);
+  const [userid, setuserid] = useState(0);
   // const [AnyList, setAnyList] = useState(false)
   // const [Add, setAdd] = useState(false)
   const deletedlist = (event) => {
     var alltheitems = [...Useritem];
     alltheitems.splice(event, 1);
     setUseritem(alltheitems);
+    // setuserid(userid-1);
   }
 
   const getedittododata = (user) => {
@@ -43,7 +45,9 @@ const TodoList = (props) => {
           </div>
           <hr/>
           <div className='edit_delete'>
-            <Button className='edit' onClick={() => { getedittododata(check.index + 1) }}>Edit</Button>
+            <Button className='edit' onClick={(put) => { 
+              put.id = setUseritem(...Useritem.length+1)
+              alert(userid); }}>Edit</Button>
             <Button className='delete' onClick={() => deletedlist(check.index)}>Delete</Button>
           </div>
         </div>
@@ -104,7 +108,7 @@ const TodoList = (props) => {
             {Useritem.map(
               (data) => <TakeALook thoughts={data} />
             )}
-            <AddTodo username={props.User} WhatToDo={WriteYourTodo} setNorecord={setNorecord} />
+            <AddTodo username={props.User} WhatToDo={WriteYourTodo} setNorecord={setNorecord} setuserid = {setuserid} userid = {userid}/>
           </div>
 
         </div>

@@ -18,6 +18,8 @@ const AddTodo = (props) => {
       props.WhatToDo(tmp)
       
       props.setNorecord(true)
+      props.setuserid(props.userid+1);
+      alert(props.userid+1);
     }
     else{
       alert("You have to fill all the fields")
