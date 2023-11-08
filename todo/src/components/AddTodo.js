@@ -7,12 +7,12 @@ const AddTodo = (props) => {
   const [title, settitle] = useState("");
   const [Deesc, setdesc] = useState("");
   const [owner, setowner] = useState("");
-  const [id, setid] = useState("");
+  // const [id, setid] = useState("");
   useEffect(() => {
     settitle(props?.Editor?.Title)
     setdesc(props?.Editor?.Describe)
     setowner(props?.Editor?.Creator)
-    setid(props?.Editor?.id)
+    // setid(props?.Editor?.id)
   }, [props.Editor])
  
   const AdditUp = (event) => {
@@ -23,7 +23,7 @@ const AddTodo = (props) => {
     event.preventDefault();
 
     if (Objective !== '' && Desc !== '') {
-      let tmp = { Title: Objective, Describe: Desc, Creator: Creator === '' ? "Owner" : Creator };
+      let tmp = { Title: Objective, Describe: Desc, Creator: Creator === '' ? "Tester" : Creator };
 
       props.WhatToDo(tmp);
 
@@ -50,7 +50,9 @@ const AddTodo = (props) => {
         <br />
         <input type='text' id='owner' className='motive' placeholder='Enter your Good name' value={owner} onChange={O => setowner(O.target.value)} /> {/* Same as above */}
 
-        <Button type='submit' className='Add'>Add ➕</Button>
+        <Button type='submit' className='Add' onClick={() => {
+          props.setAddButtonClicked(false);
+        }}>Add ➕</Button>
       </form>
     </>
   );
