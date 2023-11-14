@@ -1,11 +1,10 @@
-// import logo from './logo.svg';
 import './App.css';
 import React, {useState} from 'react';
 import TodoLogin from './components/TodoLogin';
 import TodoList from './components/TodoList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 let username = "Ritesh";
-let password = "";
+let password = "Test@123";
 
 function App() {
   
